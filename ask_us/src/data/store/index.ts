@@ -1,18 +1,18 @@
 import { createStore, applyMiddleware } from "redux";
-// import { composeWithDevTools } from "redux-devtools-extension";
-// import reduxSaga from "redux-saga";
+import { composeWithDevTools } from "redux-devtools-extension";
+import reduxSaga from "redux-saga";
 
-// import reducer from "../reducers";
-// import sagas from "middleware/sagas";
+import reducer from "../reducers";
+import sagas from "middleware/sagas";
 
-// const sagaMiddleWare = reduxSaga();
+const sagaMiddleWare = reduxSaga();
 
-// // redux mapState type
-// export type AppState = ReturnType<typeof reducer>;
+// redux mapState type
+export type AppState = ReturnType<typeof reducer>;
 
-// export const store = createStore(
-//   reducer,
-//   composeWithDevTools(applyMiddleware(sagaMiddleWare))
-// );
+export const store = createStore(
+  reducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleWare))
+);
 
-// sagaMiddleWare.run(sagas);
+sagaMiddleWare.run(sagas);
