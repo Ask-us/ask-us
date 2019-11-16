@@ -1,10 +1,16 @@
 import React, { FC } from "react";
 
+import * as S from "./style";
+import { SafeLine } from "components/common";
+import ButtonContainer from "./googleLogin";
+
 const Main: FC = () => {
   return (
-    <div>
-      <div>TEST</div>
-    </div>
+    <S.Wrapper>
+      <SafeLine>
+        <ButtonContainer />
+      </SafeLine>
+    </S.Wrapper>
   );
 };
 
