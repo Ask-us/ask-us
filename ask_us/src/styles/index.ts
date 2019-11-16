@@ -85,4 +85,16 @@ const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
   }
 `;
 
+export const COLOR = {
+  basic: "#7983cb" as const,
+  border: {
+    active: "#00cbff" as const,
+    disable: "rgba(0, 203, 255, 0.2)" as const
+  },
+  sub: "#8d98ff" as const,
+  white: "#f7f7f7" as const,
+  defaultOutline: "rgb(0, 150, 255)" as const,
+  gray: "#959595" as const
+};
+
 export default GlobalStyle;
