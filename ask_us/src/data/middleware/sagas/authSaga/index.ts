@@ -25,7 +25,7 @@ function* googleLogin() {
     yield put({
       type: GOOGLE_LOGIN_ASYNC,
       payload: {
-        status: error.response.status
+        status: error.code === "auth/network-request-failed" ? 511 : 400
       }
     });
   }
@@ -44,7 +44,7 @@ function* logout() {
     yield put<LogOut>({
       type: LOG_OUT,
       payload: {
-        status: error.response.status
+        status: error.code === "auth/network-request-failed" ? 511 : 400
       }
     });
   }

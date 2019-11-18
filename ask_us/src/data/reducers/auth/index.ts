@@ -1,6 +1,7 @@
 import {
   GOOGLE_LOGIN_ASYNC,
   LOG_OUT_ASYNC,
+  RESET_STATUS,
   AuthActions
 } from "data/actions/auth";
 import { GoogleLoginResponseType } from "data/middleware/api/apiType";
@@ -33,6 +34,12 @@ const authReducer = (
         ...state,
         user: null,
         logoutStatus: action.payload.status
+      };
+    case RESET_STATUS:
+      return {
+        ...state,
+        loginStatus: 0,
+        logoutStatus: 0
       };
     default:
       return state;
