@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { connectFirebase } from "shared/Firebase";
 import GlobalStyle from "styles/index";
-import { Main } from "container/index";
+import { Main, Create } from "container/index";
 
 const App: FC = () => {
   const didMountRef = useRef(false);
@@ -21,6 +21,7 @@ const App: FC = () => {
       <GlobalStyle />
       <Switch>
         <Route path="/" render={() => <Main />} exact />
+        <Route path="/create" render={() => <Create />} exact />
       </Switch>
     </BrowserRouter>
   );
