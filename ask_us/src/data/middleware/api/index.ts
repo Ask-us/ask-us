@@ -1,6 +1,8 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
+import { CreateRoomRequestType } from "./apiType";
+
 const GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export const googleLoginApi = async () => {
@@ -11,6 +13,15 @@ export const googleLoginApi = async () => {
 
 export const logoutApi = async () => {
   const response = await firebase.auth().signOut();
+
+  return response;
+};
+
+export const createRoomApi = async (payload: CreateRoomRequestType) => {
+  const response = await firebase
+    .database()
+    .ref("user/")
+    .push(payload);
 
   return response;
 };
