@@ -37,7 +37,7 @@ export const Button = styled.button`
     border: 2px solid ${COLOR.border.active};
 
     span {
-      color: ${COLOR.basic};
+      color: ${COLOR.basic.default};
     }
   }
 

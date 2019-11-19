@@ -5,6 +5,23 @@ import {
 } from "styled-components";
 import Font from "assets/font/NanumSquareL.ttf";
 
+export const COLOR = {
+  basic: {
+    default: "#7983cb" as const,
+    hover: "#6674d4" as const,
+    active: "#4957bb" as const
+  },
+  border: {
+    active: "#00cbff" as const,
+    disable: "rgba(0, 203, 255, 0.2)" as const
+  },
+  disable: "rgba()" as const,
+  sub: "#8d98ff" as const,
+  white: "#f7f7f7" as const,
+  defaultOutline: "rgb(0, 150, 255)" as const,
+  gray: "#959595" as const
+};
+
 const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
   /* css initialize */
   html, body {
@@ -16,7 +33,7 @@ const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
     &:-webkit-autofill {
       box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.8) inset;
     }
-    border: solid 1px #ffa2c0;
+    border: solid 1px ${COLOR.border.active};
     border-radius: 5px;
     &[type=password] {
     font-family: sans-serif;
@@ -84,17 +101,5 @@ const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
     transition: 0.5s;
   }
 `;
-
-export const COLOR = {
-  basic: "#7983cb" as const,
-  border: {
-    active: "#00cbff" as const,
-    disable: "rgba(0, 203, 255, 0.2)" as const
-  },
-  sub: "#8d98ff" as const,
-  white: "#f7f7f7" as const,
-  defaultOutline: "rgb(0, 150, 255)" as const,
-  gray: "#959595" as const
-};
 
 export default GlobalStyle;
