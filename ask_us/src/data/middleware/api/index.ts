@@ -39,7 +39,7 @@ export const createRoomApi = async (payload: CreateRoomRequestType) => {
 // 함수의 return값을 redux-saga으로 받아서 redux에 담고 사용하세요.
 // socket처럼 한번만 실행하면 자기혼자 작동해서 계속 데이터를 return해 줍니다.
 // setQuestionApi가 실행되면 이 api가 setQuestionApi바로 다음에 실행된다고 생각하면됩니다.
-export const enrollmentChiledChangeEvent = async () =>
+export const enrollmentChiledChangeEventApi = async () =>
   new Promise<{ status: number; data: { [key: string]: string } }>(
     (resolve, reject) => {
       firebase
