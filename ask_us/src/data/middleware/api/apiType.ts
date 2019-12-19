@@ -11,6 +11,19 @@ export interface CreateRoomRequestType {
   userName: string;
 }
 
+export interface GetRoomCodeRequestType {
+  roomCode: string;
+}
+
+export interface SetQuestionRequestType {
+  roomCode: string;
+  question: string;
+  questionList: {
+    [key: string]: string;
+  };
+  dbKey: string;
+}
+
 export interface ApiPayload<T = null> {
   data?: T;
   status?: number;
